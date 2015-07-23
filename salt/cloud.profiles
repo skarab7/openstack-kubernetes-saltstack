@@ -1,4 +1,5 @@
 kbr_base_image:
+    provider: ''
     ssh_username: ubuntu
     size: cloudcompute.l
     image: Ubuntu 14.04 LTS x64
