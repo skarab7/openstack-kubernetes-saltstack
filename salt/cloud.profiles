@@ -1,0 +1,42 @@
+kbr_base_image:
+    ssh_username: ubuntu
+    size: cloudcompute.l
+    image: Ubuntu 14.04 LTS x64
+    ssh_key_name: kbr_key
+    security_groups: ssh_access,global_saltstack
+
+ubuntu_large_hamm5:
+    extends: kbr_base_image
+    provider: cah-hamm5
+
+saltmaster_hamm5:
+    extends: ubuntu_large_hamm5
+    make_master: True
+
+ubuntu_large_hamm5_kubernetes: 
+    extends: ubuntu_large_hamm5
+    security_groups: kubernetes_internal, kubernetes_external
+
+ubuntu_large_hamm6:
+    extends: kbr_base_image
+    provider: cah-hamm6
+
+ubuntu_large_hamm6_kubernetes: 
+    extends: ubuntu_large_hamm6
+    security_groups: kubernetes_internal, kubernetes_external
+
+ubuntu_large_dresden2:
+    extends: kbr_base_image
+    provider: cah-dresden2
+
+ubuntu_large_dresden2_kubernetes: 
+    extends: ubuntu_large_dresden2
+    security_groups: kubernetes_internal, kubernetes_external
+
+ubuntu_large_dd1a:
+    extends: kbr_base_image
+    provider: cah-dd1a
+
+ubuntu_large_dd1a_kubernetes: 
+    extends: ubuntu_large_dd1a
+    security_groups: kubernetes_internal, kubernetes_external
